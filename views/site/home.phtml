@@ -1,0 +1,17 @@
+<?php require VIEWS_PATH.'site/includes/header.phtml';?>
+
+<div class="container">
+    <h1>Home</h1>
+    <hr>
+    <?php foreach($this->products as $prod):?>
+        <div class="col-md-4">
+        <img src="https://via.placeholder.com/150x150.png?text=<?=$prod['name'];?>" alt="" class="img-responsive">
+        <h2><a href="<?=HOME;?>/product/<?=$prod['id'];?>"><?=$prod['name'];?></a></h2>
+        <p><?=$prod['description'];?></p>
+        <p><?='R$ '.number_format($prod['price'],2,',','.');?></p>
+        
+        </div>
+    <?php endforeach;?>
+</div>
+
+<?php require VIEWS_PATH.'site/includes/footer.phtml';?>
